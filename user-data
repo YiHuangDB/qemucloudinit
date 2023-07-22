@@ -16,4 +16,11 @@ users:
     groups: users, admin
     ssh_authorized_keys:
      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9kGUb84WrW67dPN7VEdnQf8kEKs4hWzoMNUwth4bgvzgZ0XTYaKeraJXU+KQ64r0OYOzA0DlL2CwLfnzRUrzspXNVGokLp8C+Rz/lKxyFux/Zr5uauD1vPeClD7hW5lYU+b+OobLurPqBAdGtwRYhTArEOe2GOZxMxQEPc9UsUT1iJJ6NrnAVx3I7fWeIhDmCjQYp2TrWCEB5Wh6vNCEl0OBUXjnlGEvRQd6yJp/U8w8foM8XtPwLwL8qsfn6vZ602BkJa2IjM3BZ648gO/BJ2cHmnACGtF3HLzrGYoBuH19gCD89CvUo6mBHPXYqsCXMPYcgTWQaQHfjYdoeZaKr ubuntu@localhost
+runcmd:
+    - [ echo "PubkeyAcceptedAlgorithms +ssh-rsa" >> /etc/ssh/sshd_config]
+    - [ ls, -l, / ]
+    - [ sh, -xc, "echo $(date) ': hello world!'" ]
+    - [ sh, -c, echo "=========hello world'=========" ]
+    - ls -l /root
+    - [ wget, "http://example.org", -O, /tmp/index.html ]     
 
